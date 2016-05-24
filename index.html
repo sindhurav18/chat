@@ -5,10 +5,13 @@
        <link rel="stylesheet" href="css/style.css"> 
 <script src="/socket.io/socket.io.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-   
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>  
  </head>
     <body>
-        <div class="chat">
+    <div class="chat">
+         <div class="container-fluid">
+         <div class="col-md-7 col-xs-12 col-md-offset-2">
+         <h3 class="title text-center">Sample Chat</h3>
             <input type="text" class="chat-name" placeholder="Enter Your Name">
             <div class="chat-messages">
             <div class="chat-message">
@@ -21,20 +24,12 @@
 
             <div class="chat-status">Status: <span>Idle</span></div>
         </div>
+ 
+  </div>
+</div>
+
     </body>
-   <!--  <script>
-      var socket = io();
    
-        $(document).ready(function() {
-  $('#send').click(function() {
-    alert("im here"+ $('#m').val());
-        // socket.emit('input message', $('#m').val());
-        socket.emit('input message', {"name":"sindhu","message":"hello"});
-        $('#m').val('');
-        return false;
-      });
-});
-    </script> -->
     <script>
         (function() {
 var getNode = function(s){
@@ -64,8 +59,9 @@ clearInterval(delay);
 
 // setStatus('testing');
 try{
-    // var socket = io.connect('http://127.0.0.1:1337')
-    var socket = io.connect('https://chatserverapp.herokuapp.com/')
+    // var socket = io.connect('https://127.0.0.1:1337')
+        var socket = io.connect('https://chatserverapp.herokuapp.com/')
+
 }
 catch(e){
 
