@@ -6,6 +6,17 @@ var mongo = require('mongodb').MongoClient;
 var port=process.env.PORT || 1337;
 app.use(express.static(__dirname));
 
+ app.use(function(req, res, next) {
+ res.setHeader('Access-Control-Allow-Origin', '*');
+ res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
+ res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, \
+ Authorization');
+if(req.headers['x-forwarded-proto']!='https')
+    res.redirect('https://chatserverapp.herokuapp.com/');
+ next();
+ });
+
+
 app.get('/', function(req, res){
   // res.send('<h1>Hello world</h1>');
   res.sendFile(__dirname + '/index.html');
