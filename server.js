@@ -3,6 +3,7 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var mongo = require('mongodb').MongoClient;
+var port=process.env.PORT || 1337;
 app.use(express.static(__dirname));
 
 app.get('/', function(req, res){
@@ -64,8 +65,10 @@ clear: true
 
 
 
-http.listen(1337, function(){
-  console.log('listening on *:1337');
-});
+// http.listen(1337, function(){
+//   console.log('listening on *:1337');
+// });
 
 
+app.listen(port);
+console.log('listening to port' +port);
