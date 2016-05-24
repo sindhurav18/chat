@@ -65,10 +65,10 @@ clear: true
 
 
 
-// http.listen(1337, function(){
-//   console.log('listening on *:1337');
-// });
+http.listen(port, function(){
+  console.log('listening on *:1337');
+});
 
 
-app.listen(port);
-console.log('listening to port' +port);
+// app.listen(port);
+// console.log('listening to port' +port);
