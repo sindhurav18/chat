@@ -23,7 +23,7 @@ app.get('/', function(req, res){
 });
 
 // mongo.connect('mongodb://127.0.0.1/chat',function(err,db)
-mongo.connect('mongodb://sindhura:sindhura@ds011863.mlab.com:11863/chatserver',function(err,db)
+mongo.connect('mongodb://user:pwd@ds011863.mlab.com:11863/chatserver',function(err,db)
 {
 if(err) throw err;
 io.on('connection', function(socket){
